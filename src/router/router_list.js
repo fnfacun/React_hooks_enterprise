@@ -12,40 +12,40 @@ let routerList = [
         name: "首页",
         path: "/",
         exact: true,
-        render(){
-            return <Index />
+        render(props){
+            return <Index {...props} />
         }
     },
     {
         name: "课程安排",
         path: "/course",
         exact: true,
-        render(){
-            return <Course />
+        render(props){
+            return <Course {...props} />
         }
     },
     {
         name: "讲师团队",
         path: "/lecturer",
         exact: true,
-        render(){
-            return <Lecturer />
+        render(props){
+            return <Lecturer {...props} />
         }
     },
     {
         name: "登录注册",
         path: "/login",
         exact: true,
-        render(){
-            return <Login />
+        render(props){
+            return <Login {...props} />
         }
     },
     {
         name: "作品详情",
         path: "/work",
         exact: true,
-        render(){
-            return <Work />
+        render(props){
+            return <Work {...props} />
         }
     }
 ]
