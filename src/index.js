@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 import { BrowserRouter } from "react-router-dom";
 
+console.disableYellowBox = true // 关闭全部黄色警告
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
