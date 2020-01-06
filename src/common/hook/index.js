@@ -8,4 +8,11 @@ function useBack(history) {
     }
 }
 
-export {useBack};
+function useInnerHeight() {
+    return window.innerHeight;
+}
+
+export { 
+    useBack,
+    useInnerHeight
+};
