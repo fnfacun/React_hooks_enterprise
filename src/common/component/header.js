@@ -8,7 +8,7 @@ import outLogin from '../../store/action/outlog';
 function Header(props) {
     let { pathname } = props.location;
     let back = useBack(props.history);
-    let { user } = props;
+    let { user, changeShowMenu } = props;
     let [isBtnShow, setBtnShow] = useState(false);
     // 记录用户信息
     useEffect(() => {
@@ -54,7 +54,12 @@ function Header(props) {
                         }}
                     ></a>
                     :
-                    <a className="header-btn-left iconfont icon-hycaidan"></a>
+                    <a 
+                        className="header-btn-left iconfont icon-hycaidan"
+                        onClick={()=>{
+                            changeShowMenu();
+                        }}
+                    ></a>
                 }
             </nav>
             <h1 className="logo">miaov.com</h1>
