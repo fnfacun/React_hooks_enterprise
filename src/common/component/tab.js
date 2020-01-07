@@ -20,12 +20,11 @@ function Tab(props) {
         });
         // 同步 active
         bScroll.on("scrollEnd",()=>{
-            console.log("1")
-            setNow(bScroll.getCurrentPage().pageX)
+            setNow(bScroll.getCurrentPage().pageX);
         });
         // 开启定时器
         timer = setInterval(() => {
-            bScroll.next(600)
+            bScroll.next(600);
         }, 3000);
         // 按下清除
         bannerWrap.current.addEventListener("touchstart",()=>{
@@ -34,7 +33,7 @@ function Tab(props) {
         // 抬起执行
         bannerWrap.current.addEventListener("touchend",()=>{
             timer = setInterval(() => {
-                bScroll.next(600)
+                bScroll.next(600);
             }, 3000);
         });
         return ()=>{

@@ -20,7 +20,11 @@ function Frame(props) {
     }
     // 滑屏处理
     useEffect(()=>{
-        pageScroll = new BScroll(wrapRef.current)
+        pageScroll = new BScroll(wrapRef.current,{
+            preventDefaultException: {
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
+            }
+        })
     },[])
     return (
         <div>

@@ -90,7 +90,7 @@ function RegisterBox(props) {
                     onClick={toRegister}
                 >注册</button>
                 <p className="form_tip">已经帐号？
-                    <a onClick={() => {
+                    <a onTouchStart={() => {
                         setDeg(0);
                     }}>立即登录</a>
                 </p>

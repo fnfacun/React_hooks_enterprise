@@ -11,7 +11,7 @@ function LoginBox(props) {
     let [vcodeShow, setVcodeShow] = useState(false);    // 是否显示验证码
     let [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now()); // 图片请求
     let back = useBack(props.history);  // 路由跳转
-    let {setDeg} = props;
+    let { setDeg } = props;
     function toLogin() {
         props.dispatch(login({
             verify: vcode,
@@ -76,16 +76,16 @@ function LoginBox(props) {
                                 setVcodeSrc("/miaov/user/verify?" + Date.now())
                             }}
                         />
-                        : 
-                    ""}
+                        :
+                        ""}
                 </p>
                 <button
                     className="form_btn"
                     onClick={toLogin}
                 >登录</button>
                 <p className="form_tip">没有帐号？
-                    <a onClick={()=>{
-                        setDeg(-180)
+                    <a onTouchStart={() => {
+                        setDeg(180)
                     }}>立即注册</a>
                 </p>
             </div>
