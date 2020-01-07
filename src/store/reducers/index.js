@@ -1,10 +1,7 @@
 import getUser from "./login";
-
-function index(state = 0, action) {
-    return state;
-}
+import works from "./works";
 
 export default {
-    index,
-    getUser
+    getUser,
+    works
 };
