@@ -19,13 +19,18 @@ function Index(props) {
     let { dispatch } = props;
     let [page, setPage] = useState(1);
     function getWorkData() {
-        dispatch(getWorks(page));
+        let p = dispatch(getWorks(page));
+        setPage(++page);
+        return p;
     }
     useEffect(() => {
         getWorkData();
     }, [])
     return (
-        <Frame>
+        <Frame
+            pullUp={true}
+            getWorkData={getWorkData}
+        >
             <div>
                 <Tab
                     data={ImageData}

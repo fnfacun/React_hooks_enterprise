@@ -2,7 +2,6 @@ import React from 'react';
 
 function Works(props) {
     let { data, loading, loadEnd } = props;
-    console.log(props)
     return (
         <div className="works">
             <h3>学员作品</h3>
