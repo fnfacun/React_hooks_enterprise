@@ -34,7 +34,7 @@ function Tab(props) {
         bannerWrap.current.addEventListener("touchend",()=>{
             timer = setInterval(() => {
                 bScroll.next(600);
-            }, 3000);
+            }, 2000);
         });
         return ()=>{
             clearInterval(timer);
@@ -44,15 +44,11 @@ function Tab(props) {
         <div className="banner">
             <div className="banner_img" ref={bannerWrap}>
                 <ul className="banner_list clearfix">
-                    {
-                        data.map((item, index) => <li key={index}>{render(item)}</li>)
-                    }
+                    {data.map((item, index) => <li key={index}>{render(item)}</li>)}
                 </ul>
             </div>
             <ul className="banner_nav">
-                {
-                    data.map((item, index) => <li key={index} className={now==index?"active":""} ></li>)
-                }
+                {data.map((item, index) => <li key={index} className={now==index?"active":""} ></li>)}
             </ul>
         </div>
     )

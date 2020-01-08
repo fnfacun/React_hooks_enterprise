@@ -24,12 +24,12 @@ function Frame(props) {
             preventDefaultException: { // 处理连接头
                 tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
             },
-            pullUpLoad: pullUp ? { threshold: 200 } : false // 是否开始下拉功能
+            pullUpLoad: pullUp ? { threshold: 200 } : false, // 是否开始下拉功能
         });
         // 上拉请求事件
         pageScroll.on("pullingUp", () => {
-            getWorkData().then(res=>{
-                if(res){
+            getWorkData().then(res => {
+                if (res) {
                     // 当上拉加载数据加载完毕后，需要调用此方法告诉 better-scroll 数据已加载。
                     pageScroll.finishPullUp();
                     // 重新计算 better-scroll，当 DOM 结构发生变化的时候务必要调用确保滚动的效果正常。
