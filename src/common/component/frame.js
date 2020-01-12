@@ -40,8 +40,6 @@ function Frame(props) {
                 };
             })
         });
-        // 解决上拉卡顿
-        // pageScroll.finishPullUp()
     }, [])
     return (
         <div>
