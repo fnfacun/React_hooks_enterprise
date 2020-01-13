@@ -19,7 +19,7 @@ function Tab(props) {
             }
         });
         // 同步 active
-        bScroll.on("scrollEnd",()=>{
+        bScroll.on("scrollEnd", () => {
             setNow(bScroll.getCurrentPage().pageX);
         });
         // 开启定时器
@@ -27,16 +27,16 @@ function Tab(props) {
             bScroll.next(600);
         }, 3000);
         // 按下清除
-        bannerWrap.current.addEventListener("touchstart",()=>{
+        bannerWrap.current.addEventListener("touchstart", () => {
             clearInterval(timer);
         });
         // 抬起执行
-        bannerWrap.current.addEventListener("touchend",()=>{
+        bannerWrap.current.addEventListener("touchend", () => {
             timer = setInterval(() => {
                 bScroll.next(600);
             }, 2000);
         });
-        return ()=>{
+        return () => {
             clearInterval(timer);
         }
     }, []);
@@ -47,9 +47,10 @@ function Tab(props) {
                     {data.map((item, index) => <li key={index}>{render(item)}</li>)}
                 </ul>
             </div>
-            <ul className="banner_nav">
-                {data.map((item, index) => <li key={index} className={now==index?"active":""} ></li>)}
-            </ul>
+            {data.length < 1 ? "" : 
+            (<ul className="banner_nav">
+                {data.map((item, index) => <li key={index} className={now == index ? "active" : ""} ></li>)}
+            </ul>)}
         </div>
     )
 };

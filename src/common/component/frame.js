@@ -22,7 +22,8 @@ function Frame(props) {
     useEffect(() => {
         let pageScroll = new BScroll(wrapRef.current, {
             preventDefaultException: { // 处理连接头
-                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+                className: /(^|\s)wrok_stop(\s|$)/
             },
             pullUpLoad: pullUp ? { threshold: 200 } : false, // 是否开始下拉功能
         });
@@ -40,8 +41,6 @@ function Frame(props) {
                 };
             })
         });
-        // 解决上拉卡顿
-        // pageScroll.finishPullUp()
     }, [])
     return (
         <div>

@@ -1,7 +1,8 @@
 function works(state={
     data: [],
     loading: false, // 数据是否正在加载
-    loadEnd: false  // 数据是否请求结束
+    loadEnd: false, // 数据是否请求结束
+    page: 1
 },action) {
     switch (action.type) {
         case "LOAD":
@@ -13,6 +14,7 @@ function works(state={
             return {
                 ...state,
                 loading: false,
+                page: ++state.page,
                 data: state.data.concat(action.data)
             }
         case "LOADEND":
