@@ -5,14 +5,14 @@ function getWorks(page) {
         dispatch({
             type: "LOAD"
         });
-        let {page} = getState().works;
-        return HTTP.post(`/lecturer/lists?page=${page}&rows=8`,{
+        let { page } = getState().works;
+        return HTTP.post(`/lecturer/lists?page=${page}&rows=8`, {
             order: "desc",
             sort: "sort",
             category_id: 1,
             recommend: 1
         }).then(res => {
-            if(!res.data.length){ // 当 res 没有数据时 
+            if (!res.data.length) { // 当 res 没有数据时 
                 dispatch({
                     type: "LOADEND"
                 });

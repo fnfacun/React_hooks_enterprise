@@ -4,12 +4,11 @@ import Frame from "../../common/component/frame";
 import '../../common/css/miiaov.css';
 import getWork from '../../store/action/getWork';
 import Skeleton from "../../common/component/skeleton";
-import Tab from "../../common/component/tab";
+import Main from "./main";
 
 function Work(props) {
     let { data, loading, dispatch, match } = props;
     let { id } = match.params;
-    console.log(data, loading)
     useEffect(() => {
         dispatch(getWork(id));
         return ()=>{
@@ -21,13 +20,7 @@ function Work(props) {
     return (
         <div>
             <Frame>
-                {loading?<Skeleton />:(<div className="workDetails">
-                    <Tab 
-                        data={data.image_path.map(item=>item.path)}
-                        render={src=><img src={src} />}
-                    />
-                </div>)
-                }
+                {loading?<Skeleton />:<Main data={data} />}
             </Frame>
             <footer className="miiapv_footer">回复本帖</footer>
         </div>

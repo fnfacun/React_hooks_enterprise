@@ -17,10 +17,8 @@ const ImageData = [
 
 function Index(props) {
     let { dispatch } = props;
-    // let [page, setPage] = useState(1);
     function getWorkData() {
         let p = dispatch(getWorks());
-        // setPage(++page);
         return p;
     }
     useEffect(() => {
