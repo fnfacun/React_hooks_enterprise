@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
+=======
+<<<<<<< HEAD
+import React, { useEffect, useState } from "react";
+>>>>>>> 3b6ff5a383dc8ef557a525e5a21ced3e11468818
 import { connect } from "react-redux";
 import Tab from "../../common/component/tab";
 import Course from "./course";
@@ -48,4 +53,58 @@ function Index(props) {
 };
 
 
+=======
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import Tab from "../../common/component/tab";
+import Course from "./course";
+import Vip from "./vip";
+import Miaov from "./miaov";
+import Works from "../../common/component/works";
+import Frame from '../../common/component/frame';
+import getWorks from '../../store/action/getWorks';
+
+const ImageData = [
+    require("../../common/images/tab/img1.png"),
+    require("../../common/images/tab/img2.png"),
+    require("../../common/images/tab/img3.png"),
+    require("../../common/images/tab/img4.png")
+]
+
+function Index(props) {
+    let { dispatch } = props;
+    let [page, setPage] = useState(1);
+    function getWorkData() {
+        let p = dispatch(getWorks(page));
+        setPage(++page);
+        return p;
+    }
+    useEffect(() => {
+        getWorkData();
+    }, [])
+    return (
+        <Frame
+            pullUp={true}
+            getWorkData={getWorkData}
+        >
+            <div>
+                <Tab
+                    data={ImageData}
+                    render={(ImageData) => {
+                        return <img src={ImageData} />
+                    }}
+                />
+                <section className="index_content">
+                    <Course />
+                    <Vip />
+                    <Miaov />
+                    <Works {...props} />
+                </section>
+            </div>
+        </Frame>
+    )
+};
+
+
+>>>>>>> e8d0ca238a055d7708796568835ac8f6daf79c88
 export default connect(props => ({ ...props.works }))(Index);
