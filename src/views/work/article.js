@@ -10,7 +10,6 @@ function Article(props) {
                 window.pageScroll.refresh();
             }
         });
-        console.log(imgs)
     },[data]);
     return (
         <article className="miiaov_article" ref={wrapRef}>

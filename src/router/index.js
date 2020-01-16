@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {routerList} from "./router_list"; // 路由列表组件
 
-function IndexRoute() {
+function IndexRoute(props) {
     return (
         <Switch>
             {routerList.map((item, index) => {
