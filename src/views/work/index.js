@@ -1,20 +1,24 @@
-<<<<<<< HEAD
 import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import Frame from "../../common/component/frame";
 import '../../common/css/miiaov.css';
-import getWork from '../../store/action/getWork';
+import getWork from '../../store/action/work';
 import Skeleton from "../../common/component/skeleton";
 import Main from "./main";
+import getMessageList from "../../store/action/messageList";
 
 function Work(props) {
     let { data, loading, dispatch, match } = props;
     let { id } = match.params;
     useEffect(() => {
         dispatch(getWork(id));
+        dispatch(getMessageList(id));
         return ()=>{
             dispatch({
                 type: "WORK_RESET"
+            });
+            dispatch({
+                type: "MESSAGE_RESET"
             })
         };
     },[]);
@@ -30,18 +34,3 @@ function Work(props) {
 
 
 export default connect(state => ({ ...state.work }))(Work);
-=======
-import React from "react";
-import Frame  from "../../common/component/frame";
-
-function Work() {
-    return (
-        <Frame>
-            <h2>作品</h2>
-        </Frame>
-    )
-};
-
-
-export default Work;
->>>>>>> e8d0ca238a055d7708796568835ac8f6daf79c88

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 // 路由组件
 import Index from '../views/index/index';
@@ -75,82 +74,4 @@ const nav = [
 export {
     routerList,
     nav
-=======
-import React from 'react';
-// 路由组件
-import Index from '../views/index/index';
-import Course from "../views/course/index";
-import Lecturer from "../views/lecturer/index";
-import Login from "../views/login/index";
-import Work from "../views/work/index";
-
-// 路由列表
-let routerList = [
-    {
-        name: "首页",
-        path: "/",
-        exact: true,
-        render(props){
-            return <Index {...props} />
-        }
-    },
-    {
-        name: "课程安排",
-        path: "/course",
-        exact: true,
-        render(props){
-            return <Course {...props} />
-        }
-    },
-    {
-        name: "讲师团队",
-        path: "/lecturer",
-        exact: true,
-        render(props){
-            return <Lecturer {...props} />
-        }
-    },
-    {
-        name: "登录注册",
-        path: "/login",
-        exact: true,
-        render(props){
-            return <Login {...props} />
-        }
-    },
-    {
-        name: "作品详情",
-        path: "/work",
-        exact: true,
-        render(props){
-            return <Work {...props} />
-        }
-    }
-]
-
-const nav = [
-    {
-        name: "首页",
-        path: "/",
-        exact: true,
-        className: "iconfont icon-home"
-    },
-    {
-        name: "课程安排",
-        path: "/course",
-        exact: true,
-        className: "iconfont icon-kecheng"
-    },
-    {
-        name: "讲师团队",
-        path: "/lecturer",
-        exact: true,
-        className: "iconfont icon-peixunjiangshi"
-    }
-]
-
-export {
-    routerList,
-    nav
->>>>>>> e8d0ca238a055d7708796568835ac8f6daf79c88
 };

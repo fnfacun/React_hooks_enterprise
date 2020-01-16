@@ -2,6 +2,7 @@ import React from 'react';
 import Tab from "../../common/component/tab";
 import Article from './article';
 import Good from './good';
+import MessageList from './messageList';
 
 function Main(props) {
     let { data } = props;
@@ -18,6 +19,7 @@ function Main(props) {
                         goodNub={data.good}
                         id={data.id}
                     />
+                    <MessageList />
                 </article>
             </div>
         </div>

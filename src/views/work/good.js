@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getGood, setGood, cancelGood } from "../../store/action/getGood";
+import { getGood, setGood, cancelGood } from "../../store/action/good";
 
 function Good(props) {
     let { goodNub, good, user, dispatch, id, history, goodid } = props;
