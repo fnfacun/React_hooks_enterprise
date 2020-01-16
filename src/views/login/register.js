@@ -11,6 +11,7 @@ function RegisterBox(props) {
     let [vcodeShow, setVcodeShow] = useState(false);    // 是否显示验证码
     let [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now()); // 图片请求
     let { setDeg } = props;
+    let startPoint = {};
     function toRegister() {
         props.dispatch(register({
             verify: vcode,
@@ -78,8 +79,20 @@ function RegisterBox(props) {
                         <img
                             className="verify"
                             src={vcodeSrc}
-                            onClick={() => {
-                                setVcodeSrc("/miaov/user/verify?" + Date.now())
+                            onTouchStart={(e) => {
+                                let touch = e.changedTouches[0];
+                                startPoint.x = touch.pageX;
+                                startPoint.y = touch.pageY;
+                            }}
+                            onTouchEnd={(e) => {
+                                let touch = e.changedTouches[0];
+                                let nowPoint = {
+                                    x: touch.pageX,
+                                    y: touch.pageY
+                                };
+                                if (Math.abs(nowPoint.x - startPoint.x) < 5 && Math.abs(nowPoint.y - startPoint.y) < 5) {
+                                    setVcodeSrc("/miaov/user/verify?" + Date.now())
+                                }
                             }}
                         />
                         : 

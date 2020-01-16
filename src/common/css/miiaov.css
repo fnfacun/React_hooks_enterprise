@@ -155,12 +155,12 @@
   float: left;
 }
 .user_comment span {
-  font: 0.24rem / 0.44rem "宋体";
+  font: 0.3rem / 0.44rem "宋体";
   float: left;
   padding-left: 0.21333333rem;
 }
 .comment_txt {
-  font: 0.21333333rem / 0.53333333rem "宋体";
+  font: 0.3rem / 0.53333333rem "宋体";
   color: #676464;
   padding-top: 0.02666667rem;
   padding-left: 0.62666667rem;

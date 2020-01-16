@@ -17,6 +17,11 @@ function messageList(state = {
                 page: ++state.page,
                 messageList: state.messageList.concat(action.messageList)
             }
+        case "MESSAGE_ADD": // load 结束
+            return {
+                ...state,
+                messageList: [action.messageList,...state.messageList]
+            }
         case "MESSAGE_LOADEND":
             return { // 数据请求结束
                 ...state,

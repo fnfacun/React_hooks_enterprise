@@ -18,8 +18,7 @@ const ImageData = [
 function Index(props) {
     let { dispatch } = props;
     function getWorkData() {
-        let p = dispatch(getWorks());
-        return p;
+        return dispatch(getWorks());
     }
     useEffect(() => {
         getWorkData();
@@ -27,7 +26,7 @@ function Index(props) {
     return (
         <Frame
             pullUp={true}
-            getWorkData={getWorkData}
+            getData={getWorkData}
         >
             <div>
                 <Tab

@@ -12,6 +12,7 @@ function LoginBox(props) {
     let [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now()); // 图片请求
     let back = useBack(props.history);  // 路由跳转
     let { setDeg } = props;
+    let startPoint = {};
     function toLogin() {
         props.dispatch(login({
             verify: vcode,
@@ -71,13 +72,24 @@ function LoginBox(props) {
                     {vcodeShow ?
                         <img
                             className="verify"
-                            src={vcodeSrc}
-                            onClick={() => {
-                                setVcodeSrc("/miaov/user/verify?" + Date.now())
+                            src={vcodeSrc} 
+                            onTouchStart={(e) => {
+                                let touch = e.changedTouches[0];
+                                startPoint.x = touch.pageX;
+                                startPoint.y = touch.pageY;
+                            }}
+                            onTouchEnd={(e) => {
+                                let touch = e.changedTouches[0];
+                                let nowPoint = {
+                                    x: touch.pageX,
+                                    y: touch.pageY
+                                };
+                                if (Math.abs(nowPoint.x - startPoint.x) < 5 && Math.abs(nowPoint.y - startPoint.y) < 5) {
+                                    setVcodeSrc("/miaov/user/verify?" + Date.now())
+                                }
                             }}
                         />
-                        :
-                        ""}
+                        : ""}
                 </p>
                 <button
                     className="form_btn"
