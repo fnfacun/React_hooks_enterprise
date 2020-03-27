@@ -23,7 +23,9 @@ function RegisterBox(props) {
             setTimeout(() => {
                 if (data.code === 0) {
                     setDeg(0)
-                };
+                }else {
+                    setVcode("");
+                }
                 setVcodeSrc("/miaov/user/verify?" + Date.now())
             }, 100);
         })

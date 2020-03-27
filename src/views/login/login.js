@@ -23,6 +23,7 @@ function LoginBox(props) {
             setTimeout(() => {
                 if (data.code != 0) {
                     setVcodeSrc("/miaov/user/verify?" + Date.now())
+                    setVcode("")
                 } else {
                     back();
                 }

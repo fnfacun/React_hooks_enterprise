@@ -6,7 +6,7 @@ import "./common/css/common.css";
 import "./common/css/reset.css";
 
 function App() {
-  let [showMenu, setShowMenu] = useState(false);
+  let [showMenu, setShowMenu] = useState( false);
   function changeShowMenu() {
     setShowMenu(!showMenu);
   }
